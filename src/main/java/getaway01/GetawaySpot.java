@@ -11,10 +11,13 @@
 //
 /****************************************************************************/
 
-package getaway;
+package getaway01;
 
 /**
  * Created by laemmel on 03.03.16.
  */
-public class LocationWeight {
+public interface GetawaySpot {
+
+    double getWeight();
+
 }
