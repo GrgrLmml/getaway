@@ -13,11 +13,51 @@
 
 package getaway02;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by laemmel on 03.03.16.
  */
-public interface GetawaySpot {
+public class GetawaySpot {
 
-    double getWeight();
+    private Query.Location loc;
+    private Query.Accommodation ac;
+	private double ratePerNight;
 
+
+
+	private Set<Query.Amenity> amenitySet = new HashSet<>();
+
+	public Query.Location getLoc() {
+		return loc;
+	}
+
+	public void setLoc(Query.Location loc) {
+		this.loc = loc;
+	}
+
+	public Query.Accommodation getAc() {
+		return ac;
+	}
+
+	public void setAc(Query.Accommodation ac) {
+		this.ac = ac;
+	}
+
+	public double getRatePerNight() {
+		return ratePerNight;
+	}
+
+	public void setRatePerNight(double ratePerNight) {
+		this.ratePerNight = ratePerNight;
+	}
+
+	public void addAmenity(Query.Amenity am) {
+		this.amenitySet.add(am);
+	}
+
+	public Set<Query.Amenity> getAmenities() {
+		return amenitySet;
+	}
 }
