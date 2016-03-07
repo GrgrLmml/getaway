@@ -21,18 +21,18 @@ import java.util.List;
  */
 public class Query {
 
-	public enum Location {SEASIDE, MOUNTAINS, CITY_TRIP}
+	public enum Location {SEASIDE, MOUNTAINS, CITY_TRIP} //one of
 
-	public enum Accommodation {HOTEL, HOLIDAY_APARTMENT, BED_AND_BREAKFEST}
+	public enum Accommodation {HOTEL, HOLIDAY_APARTMENT, BED_AND_BREAKFEST} //one of
 
-	public enum Amenity {BBQ, SWIMMING_POOL, WIFI} //nice to have
+	public enum Amenity {BBQ, SWIMMING_POOL, WIFI} //any number
 
 	private Location loc;
-	private boolean locStared = false;
+	private boolean locStared = false; //mandatory
 	private double maxExpenses;
 	private int duration;
 	private Accommodation ac;
-	private boolean acStared = false;
+	private boolean acStared = false; //mandatory
 	private List<Amenity> amenities = new ArrayList<>();
 
 	public int getDuration() {
@@ -90,8 +90,5 @@ public class Query {
 	public void setAcStared(boolean acStared) {
 		this.acStared = acStared;
 	}
-
-
-
 
 }

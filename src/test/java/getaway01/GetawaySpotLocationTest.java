@@ -10,11 +10,11 @@ import static org.junit.Assert.*;
  */
 public class GetawaySpotLocationTest {
 
-
     @Test
     public void getsBestSpotWeightOfTwoGetawaySpots() {
         //Arrange
-        GetawaySpotLocationCollection spots = new GetawaySpotLocationCollection();
+        GetawaySpotLocationCollection spots =
+                new GetawaySpotLocationCollection();
         spots.add(()->5.5);
         spots.add(()->3.7);
 

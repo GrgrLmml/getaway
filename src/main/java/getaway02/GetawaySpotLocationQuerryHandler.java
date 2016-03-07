@@ -91,6 +91,6 @@ public class GetawaySpotLocationQuerryHandler {
 		}
 
 
-        return null;
+        return bestMatch;
     }
 }

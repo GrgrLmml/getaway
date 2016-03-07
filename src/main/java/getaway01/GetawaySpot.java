@@ -16,8 +16,7 @@ package getaway01;
 /**
  * Created by laemmel on 03.03.16.
  */
+@FunctionalInterface
 public interface GetawaySpot {
-
     double getWeight();
-
 }
