@@ -1,9 +1,7 @@
 package getaway01;
 
+import org.junit.Assert;
 import org.junit.Test;
-
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.*;
 
 /**
  * Created by laemmel on 03.03.16.
@@ -11,7 +9,7 @@ import static org.junit.Assert.*;
 public class GetawaySpotLocationTest {
 
     @Test
-    public void getsBestSpotWeightOfTwoGetawaySpots() {
+    public void getBestSpotWeightOfTwoGetawaySpots() {
         //Arrange
         GetawaySpotLocationCollection spots =
                 new GetawaySpotLocationCollection();
@@ -22,7 +20,7 @@ public class GetawaySpotLocationTest {
         double bestWeight = spots.getBestSpotWeight();
 
         //Assert
-        assertThat(bestWeight,equalTo(5.5));
+        Assert.assertTrue(bestWeight == 5.5);
 
     }
 

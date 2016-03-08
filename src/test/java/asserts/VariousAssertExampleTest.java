@@ -1,4 +1,4 @@
-package getaway02;
+package asserts;
 /* *********************************************************************** *
  * project: org.matsim.*
  *
@@ -19,49 +19,28 @@ package getaway02;
  *                                                                         *
  * *********************************************************************** */
 
+import getaway01.GetawaySpot;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 /**
- * Created by laemmel on 05/03/16.
+ * Created by laemmel on 08/03/16.
  */
-public class GetawaySpotLocationQuerryHandlerTest02 {
+public class VariousAssertExampleTest {
 
-	private GetawaySpotLocationQuerryHandler handler;
-	private GetawaySpot s1;
-
-	@Before
-	public void initializeCommonObjects() {
-		handler = new GetawaySpotLocationQuerryHandler();
-		s1 = new GetawaySpot();
-		s1.setAc(Query.Accommodation.BED_AND_BREAKFEST);
-		s1.setLoc(Query.Location.CITY_TRIP);
-		s1.addAmenity(Query.Amenity.WIFI);
-		s1.setRatePerNight(60.);
-		handler.add(s1);
+	@Test
+	public void simpleAssertTrueTest() {
+		GetawaySpot s = ()-> 3.5;
+		Assert.assertTrue(s.getWeight() < 4.);
 	}
 
 	@Test
-	public void testNullQuery() {
-		Query q = null;
-
-		GetawaySpot bestMatch = handler.getBestMatch(q);
-
-		Assert.assertTrue(bestMatch == null);
+	public void simpleAssertThatTest() {
+		GetawaySpot s = () -> 3.5;
+		assertThat(s.getWeight(),equalTo(3.5));
 	}
 
-	@Test
-	public void testSpotTooExpensive() {
-		Query q = new Query();
-		q.setAc(Query.Accommodation.BED_AND_BREAKFEST);
-		q.setLoc(Query.Location.CITY_TRIP);
-		q.addAmenity(Query.Amenity.WIFI);
-		q.setDuration(10);
-		q.setMaxExpense(500.);
-
-		GetawaySpot bestMatch = handler.getBestMatch(q);
-
-		Assert.assertTrue(bestMatch == null);
-	}
 }

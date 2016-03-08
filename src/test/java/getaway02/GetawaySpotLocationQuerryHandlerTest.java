@@ -19,10 +19,8 @@ package getaway02;
  *                                                                         *
  * *********************************************************************** */
 
+import org.junit.Assert;
 import org.junit.Test;
-
-import static org.hamcrest.core.IsEqual.equalTo;
-import static org.junit.Assert.assertThat;
 
 /**
  * Created by laemmel on 05/03/16.
@@ -48,7 +46,7 @@ public class GetawaySpotLocationQuerryHandlerTest {
 		GetawaySpot bestMatch = handler.getBestMatch(q);
 
 		//Assert
-		assertThat(bestMatch,equalTo(null));
+		Assert.assertTrue(bestMatch == null);
 	}
 
 	@Test
@@ -76,6 +74,6 @@ public class GetawaySpotLocationQuerryHandlerTest {
 		GetawaySpot bestMatch = handler.getBestMatch(q);
 
 		//Assert
-		assertThat(bestMatch,equalTo(null));
+		Assert.assertTrue(bestMatch == null);
 	}
 }
