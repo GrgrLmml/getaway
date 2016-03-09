@@ -43,4 +43,5 @@ public class VariousAssertExampleTest {
 		assertThat(s.getWeight(),equalTo(3.5));
 	}
 
+
 }
