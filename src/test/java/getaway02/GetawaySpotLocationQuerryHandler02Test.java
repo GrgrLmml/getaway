@@ -1,4 +1,4 @@
-package asserts;
+package getaway02;
 /* *********************************************************************** *
  * project: org.matsim.*
  *
@@ -19,53 +19,49 @@ package asserts;
  *                                                                         *
  * *********************************************************************** */
 
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
-import static org.hamcrest.Matchers.containsInAnyOrder;
-
 /**
- * Created by laemmel on 10/03/16.
+ * Created by laemmel on 05/03/16.
  */
-public class HamcrestExamples02 {
-	@Test
-	public void partialStringCompareTest01(){
-		assertThat("abc",startsWith("ab"));
+public class GetawaySpotLocationQuerryHandler02Test {
+
+	private GetawaySpotLocationQuerryHandler handler;
+	private GetawaySpot s1;
+
+	@Before
+	public void initializeCommonObjects() {
+		handler = new GetawaySpotLocationQuerryHandler();
+		s1 = new GetawaySpot();
+		s1.setAc(Query.Accommodation.BED_AND_BREAKFEST);
+		s1.setLoc(Query.Location.CITY_TRIP);
+		s1.addAmenity(Query.Amenity.WIFI);
+		s1.setRatePerNight(60.);
+		handler.add(s1);
 	}
 
 	@Test
-	public void partialStringCompareTest02(){
-		assertThat("abc",endsWith("bc"));
+	public void testNullQuery() {
+		Query q = null;
+
+		GetawaySpot bestMatch = handler.getBestMatch(q);
+
+		Assert.assertTrue(bestMatch == null);
 	}
 
 	@Test
-	public void hasCollectionSpecificElement() {
-		Collection<Double> c = new ArrayList<>();
-		c.add(-1.0);
-		c.add(Math.PI);
-		c.add(1.0);
-		assertThat(c,hasItem(Math.PI));
-	}
+	public void testSpotTooExpensive() {
+		Query q = new Query();
+		q.setAc(Query.Accommodation.BED_AND_BREAKFEST);
+		q.setLoc(Query.Location.CITY_TRIP);
+		q.addAmenity(Query.Amenity.WIFI);
+		q.setDuration(10);
+		q.setMaxExpense(500.);
 
-	@Test
-	public void containsCollectionAllElementsInSpecificOrder() {
+		GetawaySpot bestMatch = handler.getBestMatch(q);
 
-		Collection<Double> c = new ArrayList<>();
-		c.add(-1.0);
-		c.add(Math.PI);
-		c.add(1.0);
-		assertThat(c,contains(-1.0,Math.PI));//this will fail
-	}
-	@Test
-	public void containsCollectionAllElementsInAnyOrder() {
-		Collection<Double> c = new ArrayList<>();
-		c.add(-1.0);
-		c.add(Math.PI);
-		c.add(1.0);
-		assertThat(c,containsInAnyOrder(Math.PI,1.0,-1.0));
+		Assert.assertTrue(bestMatch == null);
 	}
 }

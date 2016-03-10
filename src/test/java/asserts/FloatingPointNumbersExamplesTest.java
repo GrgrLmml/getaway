@@ -24,7 +24,7 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 /**
  * Created by laemmel on 09.03.16.
  */
-public class FloatingPointNumbersExamples {
+public class FloatingPointNumbersExamplesTest {
 
 
 
