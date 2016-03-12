@@ -54,8 +54,8 @@ public class GetawaySpotLocationQuerryHandler02Test {
 	@Test
 	public void testSpotTooExpensive() {
 		Query q = new Query();
-		q.setAc(Query.Accommodation.BED_AND_BREAKFEST);
-		q.setLoc(Query.Location.CITY_TRIP);
+		q.setAccommodation(Query.Accommodation.BED_AND_BREAKFEST);
+		q.setLocation(Query.Location.CITY_TRIP);
 		q.addAmenity(Query.Amenity.WIFI);
 		q.setDuration(10);
 		q.setMaxExpense(500.);

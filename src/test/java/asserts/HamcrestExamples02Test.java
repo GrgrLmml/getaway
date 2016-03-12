@@ -57,7 +57,6 @@ public class HamcrestExamples02Test {
 		Collection<Double> c = new ArrayList<>();
 		c.add(-1.0);
 		c.add(Math.PI);
-		c.add(1.0);
 		assertThat(c,contains(-1.0,Math.PI));//this will fail
 	}
 	@Test

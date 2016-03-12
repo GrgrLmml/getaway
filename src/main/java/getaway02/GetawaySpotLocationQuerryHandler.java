@@ -58,12 +58,12 @@ public class GetawaySpotLocationQuerryHandler {
 			}
 
 			//accommodation
-			if (q.getAc() == spot.getAc()) {
+			if (q.getAccommodation() == spot.getAc()) {
 				score += 1.;
 			} else {
-				if (q.isAcStared()) {
+				if (q.isMandatoryAccommodation()) {//is mandatory
 					continue;
-				} else if (q.getLoc() == spot.getLoc()){
+				} else if (q.getLocation() == spot.getLoc()){
 					score -= 1;
 				} else {
 					continue;
@@ -71,12 +71,12 @@ public class GetawaySpotLocationQuerryHandler {
 			}
 
 			//location
-			if (q.getLoc() == spot.getLoc()) {
+			if (q.getLocation() == spot.getLoc()) {
 				score += 1.;
 			} else {
-				if (q.isLocStared()) {
+				if (q.isMandatoryLocation()) {
 					continue;
-				} else if (q.getAc() == spot.getAc()){
+				} else if (q.getAccommodation() == spot.getAc()){
 					score -= 1;
 				} else {
 					continue;

@@ -17,10 +17,10 @@ public class GetawaySpotLocationTest {
         spots.add(()->3.7);
 
         //Act
-        double bestWeight = spots.getBestSpotWeight();
+        double bestScore = spots.getBestSpotWeight();
 
         //Assert
-        Assert.assertTrue(bestWeight == 5.5);
+        Assert.assertTrue(bestScore == 5.5);
 
     }
 

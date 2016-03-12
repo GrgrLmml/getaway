@@ -18,5 +18,5 @@ package getaway01;
  */
 @FunctionalInterface
 public interface GetawaySpot {
-    double getWeight();
+    double getScore();
 }

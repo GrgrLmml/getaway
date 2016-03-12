@@ -34,13 +34,13 @@ public class VariousAssertExampleTest {
 	@Test
 	public void simpleAssertTrueTest() {
 		GetawaySpot s = ()-> 3.5;
-		Assert.assertTrue(s.getWeight() < 4.);
+		Assert.assertTrue(s.getScore() < 4.);
 	}
 
 	@Test
 	public void simpleAssertThatTest() {
 		GetawaySpot s = () -> 3.5;
-		assertThat(s.getWeight(),equalTo(3.5));
+		assertThat(s.getScore(),equalTo(3.5));
 	}
 
 

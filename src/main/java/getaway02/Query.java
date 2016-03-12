@@ -27,12 +27,12 @@ public class Query {
 
 	public enum Amenity {BBQ, SWIMMING_POOL, WIFI} //any number
 
-	private Location loc;
-	private boolean locStared = false; //mandatory
+	private Location location;
+	private boolean mandatoryLocation = false;
 	private double maxExpenses;
 	private int duration;
-	private Accommodation ac;
-	private boolean acStared = false; //mandatory
+	private Accommodation accommodation;
+	private boolean mandatoryAccommodation = false;
 	private List<Amenity> amenities = new ArrayList<>();
 
 	public int getDuration() {
@@ -51,20 +51,20 @@ public class Query {
 		return this.amenities;
 	}
 
-	public Location getLoc() {
-		return loc;
+	public Location getLocation() {
+		return location;
 	}
 
-	public void setLoc(Location loc) {
-		this.loc = loc;
+	public void setLocation(Location location) {
+		this.location = location;
 	}
 
-	public boolean isLocStared() {
-		return locStared;
+	public boolean isMandatoryLocation() {
+		return mandatoryLocation;
 	}
 
-	public void setLocStared(boolean locStared) {
-		this.locStared = locStared;
+	public void setMandatoryLocation(boolean mandatoryLocation) {
+		this.mandatoryLocation = mandatoryLocation;
 	}
 
 	public double getMaxExpenses() {
@@ -75,20 +75,20 @@ public class Query {
 		this.maxExpenses = maxExpenses;
 	}
 
-	public Accommodation getAc() {
-		return ac;
+	public Accommodation getAccommodation() {
+		return accommodation;
 	}
 
-	public void setAc(Accommodation ac) {
-		this.ac = ac;
+	public void setAccommodation(Accommodation accommodation) {
+		this.accommodation = accommodation;
 	}
 
-	public boolean isAcStared() {
-		return acStared;
+	public boolean isMandatoryAccommodation() {
+		return mandatoryAccommodation;
 	}
 
-	public void setAcStared(boolean acStared) {
-		this.acStared = acStared;
+	public void setMandatoryAccommodation(boolean mandatoryAccommodation) {
+		this.mandatoryAccommodation = mandatoryAccommodation;
 	}
 
 }

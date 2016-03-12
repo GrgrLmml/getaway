@@ -30,8 +30,8 @@ public class GetawaySpotLocationCollection {
     public double getBestSpotWeight() {
         double bestWeight = Double.NEGATIVE_INFINITY;
         for (GetawaySpot spot : spots) {
-            if (spot.getWeight() > bestWeight) {
-                bestWeight = spot.getWeight();
+            if (spot.getScore() > bestWeight) {
+                bestWeight = spot.getScore();
             }
         }
         return bestWeight;
