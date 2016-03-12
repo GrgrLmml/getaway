@@ -15,7 +15,7 @@ public class GetawaySpotLocationTest {
                 new GetawaySpotLocationCollection();
         spots.add(()->5.5);
         spots.add(()->3.7);
-        spots.add(()->7.7);
+//        spots.add(()->7.7);
 
         //Act
         double bestScore = spots.getBestSpotScore();
