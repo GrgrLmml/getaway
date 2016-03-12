@@ -33,7 +33,7 @@ public class GetawaySpotLocationQuerryHandler {
 		if (q == null) {
 			return null;
 		}
-        GetawaySpot bestMatch = null;
+		GetawaySpot bestMatch = null;
 		double bestScore = Double.NEGATIVE_INFINITY;
 
         for (GetawaySpot spot : spots) {
