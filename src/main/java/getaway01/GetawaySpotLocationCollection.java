@@ -27,13 +27,13 @@ public class GetawaySpotLocationCollection {
         spots.add(spot);
     }
 
-    public double getBestSpotWeight() {
-        double bestWeight = Double.NEGATIVE_INFINITY;
+    public double getBestSpotScore() {
+        double bestScore = Double.NEGATIVE_INFINITY;
         for (GetawaySpot spot : spots) {
-            if (spot.getScore() > bestWeight) {
-                bestWeight = spot.getScore();
+            if (spot.getScore() > bestScore) {
+                bestScore = spot.getScore();
             }
         }
-        return bestWeight;
+        return bestScore;
     }
 }

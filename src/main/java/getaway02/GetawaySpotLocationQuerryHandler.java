@@ -84,7 +84,7 @@ public class GetawaySpotLocationQuerryHandler {
 			}
 
 			//evaluate score
-			if (score > SCORE_THRESHOLD && score > bestScore) {
+			if (score > bestScore) {
 				bestScore = score;
 				bestMatch = spot;
 			}
