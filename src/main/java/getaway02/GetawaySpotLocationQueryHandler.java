@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class GetawaySpotLocationQueryHandler {
 
-	private static final double SCORE_THRESHOLD = 2.;
+
 
     private List<GetawaySpot> spots = new ArrayList<>();
 
