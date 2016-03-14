@@ -20,39 +20,49 @@ package getaway02;
  * *********************************************************************** */
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 /**
  * Created by laemmel on 05/03/16.
  */
-public class GetawaySpotLocationQuerryHandler02Test {
+public class GetawaySpotLocationQueryHandlerTest {
 
-	private GetawaySpotLocationQuerryHandler handler;
-	private GetawaySpot s1;
+	@Test
+	public void testNullQuery() {
 
-	@Before
-	public void initializeCommonObjects() {
-		handler = new GetawaySpotLocationQuerryHandler();
-		s1 = new GetawaySpot();
+		//Arrange
+		GetawaySpotLocationQueryHandler handler =
+				new GetawaySpotLocationQueryHandler();
+
+		GetawaySpot s1 = new GetawaySpot();
 		s1.setAc(Query.Accommodation.BED_AND_BREAKFEST);
 		s1.setLoc(Query.Location.CITY_TRIP);
 		s1.addAmenity(Query.Amenity.WIFI);
 		s1.setRatePerNight(60.);
 		handler.add(s1);
-	}
 
-	@Test
-	public void testNullQuery() {
 		Query q = null;
-
+		//Act
 		GetawaySpot bestMatch = handler.getBestMatch(q);
 
+		//Assert
 		Assert.assertTrue(bestMatch == null);
 	}
 
 	@Test
 	public void testSpotTooExpensive() {
+
+		//Arrange
+		GetawaySpotLocationQueryHandler handler =
+				new GetawaySpotLocationQueryHandler();
+
+		GetawaySpot s1 = new GetawaySpot();
+		s1.setAc(Query.Accommodation.BED_AND_BREAKFEST);
+		s1.setLoc(Query.Location.CITY_TRIP);
+		s1.addAmenity(Query.Amenity.WIFI);
+		s1.setRatePerNight(60.);
+		handler.add(s1);
+
 		Query q = new Query();
 		q.setAccommodation(Query.Accommodation.BED_AND_BREAKFEST);
 		q.setLocation(Query.Location.CITY_TRIP);
@@ -60,8 +70,10 @@ public class GetawaySpotLocationQuerryHandler02Test {
 		q.setDuration(10);
 		q.setMaxExpense(500.);
 
+		//Act
 		GetawaySpot bestMatch = handler.getBestMatch(q);
 
+		//Assert
 		Assert.assertTrue(bestMatch == null);
 	}
 }

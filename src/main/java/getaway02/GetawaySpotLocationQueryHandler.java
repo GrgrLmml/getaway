@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * Created by laemmel on 04.03.16.
  */
-public class GetawaySpotLocationQuerryHandler {
+public class GetawaySpotLocationQueryHandler {
 
 	private static final double SCORE_THRESHOLD = 2.;
 
