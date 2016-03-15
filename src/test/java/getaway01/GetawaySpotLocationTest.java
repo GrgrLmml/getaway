@@ -9,7 +9,7 @@ import org.junit.Test;
 public class GetawaySpotLocationTest {
 
     @Test
-    public void getBestSpotWeightOfTwoGetawaySpots() {
+    public void getBestSpotScoreOfTwoGetawaySpots() {
         //Arrange
         GetawaySpotLocationCollection spots =
                 new GetawaySpotLocationCollection();
