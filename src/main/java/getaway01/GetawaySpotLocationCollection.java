@@ -30,7 +30,7 @@ public class GetawaySpotLocationCollection {
     public double getBestSpotScore() {
         double bestScore = Double.NEGATIVE_INFINITY;
         for (GetawaySpot spot : spots) {
-            if (spot.getScore() < bestScore) {
+            if (spot.getScore() > bestScore) {
                 bestScore = spot.getScore();
             }
         }
