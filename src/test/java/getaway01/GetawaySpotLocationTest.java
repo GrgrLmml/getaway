@@ -21,7 +21,7 @@ public class GetawaySpotLocationTest {
         double bestScore = spots.getBestSpotScore();
 
         //Assert
-        Assert.assertTrue(bestScore == 5.45);
+        Assert.assertTrue(bestScore == 5.5);
 
     }
 
